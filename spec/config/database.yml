@@ -1,0 +1,14 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  pool: 1
+  host: db
+  database: alarmable
+  username: postgres
+  password: postgres
+
+travis:
+  adapter: postgresql
+  encoding: unicode
+  pool: 1
+  database: alarmable

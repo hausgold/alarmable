@@ -1,0 +1,21 @@
+version: "3"
+services:
+  db:
+    image: postgres:9.6
+    network_mode: bridge
+    ports: ["5432"]
+    volumes:
+      - .:/app
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: alarmable
+
+  test:
+    image: ruby:2.3
+    network_mode: bridge
+    working_dir: /app
+    volumes:
+      - .:/app
+    links:
+      - db
