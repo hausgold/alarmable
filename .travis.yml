@@ -1,4 +1,8 @@
 sudo: false
+
+services:
+  - postgresql
+
 language: ruby
 rvm:
   - 2.4
@@ -15,4 +19,4 @@ before_install:
   - gem install bundler
   - psql -c 'create database alarmable;' -U postgres
 
-script: bundle exec rake test
+script: bundle exec rake
