@@ -73,13 +73,13 @@ end
 
 The alarms hash needs to be an array in the following format:
 
-```json
+```ruby
 [
   {
-    "channel": "email",   // email, push, web_notification, etc..
-    "before_minutes": 15  // start_at - before_minutes, >= 1
+    "channel": "email",   # email, push, web_notification, etc..
+    "before_minutes": 15  # start_at - before_minutes, >= 1
 
-    // [..] you can add custom properties if you like
+    # [..] you can add custom properties if you like
   }
 ]
 ```
