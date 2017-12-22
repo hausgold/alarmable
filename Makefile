@@ -54,6 +54,7 @@ all:
 	# clean              Clean the dependencies
 	#
 	# shell              Run an interactive shell on the container
+	# shell-irb          Run an interactive IRB shell on the container
 
 install:
 	# Install the dependencies
@@ -82,6 +83,14 @@ endif
 
 distclean: clean clean-containers
 
-shell:
+shell: install
 	# Run an interactive shell on the container
 	@$(call run-shell,$(BASH) -i)
+
+shell-irb: install
+	# Run an interactive IRB shell on the container
+	@$(call run-shell,bin/console)
+
+release:
+	# Release a new gem version
+	@$(RAKE) release
