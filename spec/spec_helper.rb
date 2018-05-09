@@ -5,6 +5,11 @@ env = ENV['TRAVIS'].nil? ? :test : :travis
 
 require 'bundler/setup'
 require 'alarmable'
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter 'spec'
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

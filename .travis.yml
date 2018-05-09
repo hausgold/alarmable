@@ -1,5 +1,9 @@
 sudo: false
 
+env:
+  global:
+    - CC_TEST_REPORTER_ID=0c1ca3b503e2700926f502d25c7df227cab8884f31cb59ac806daa6e43d1451e
+
 addons:
   postgresql: "9.6"
 
@@ -8,6 +12,7 @@ services:
 
 language: ruby
 rvm:
+  - 2.5
   - 2.4
   - 2.3
   - 2.2
@@ -22,4 +27,10 @@ before_install:
   - gem install bundler
   - psql -c 'create database alarmable;' -U postgres
 
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script: bundle exec rake
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
