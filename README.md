@@ -4,6 +4,7 @@
 [![Gem Version](https://badge.fury.io/rb/alarmable.svg)](https://badge.fury.io/rb/alarmable)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f19eedf4a7e280b8f835/maintainability)](https://codeclimate.com/github/hausgold/alarmable/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f19eedf4a7e280b8f835/test_coverage)](https://codeclimate.com/github/hausgold/alarmable/test_coverage)
+[![API docs](https://img.shields.io/badge/docs-API-blue.svg)](https://www.rubydoc.info/gems/alarmable)
 
 This is a reusable alarm concern for Active Record models. It adds support for
 the automatic maintenance of Active Job's which are scheduled for the given
