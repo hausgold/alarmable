@@ -1,6 +1,6 @@
 ![Alarmable](doc/assets/project.svg)
 
-[![Build Status](https://travis-ci.org/hausgold/alarmable.svg?branch=master)](https://travis-ci.org/hausgold/alarmable)
+[![Build Status](https://travis-ci.com/hausgold/alarmable.svg?branch=master)](https://travis-ci.com/hausgold/alarmable)
 [![Gem Version](https://badge.fury.io/rb/alarmable.svg)](https://badge.fury.io/rb/alarmable)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4181ffca902206ff7648/maintainability)](https://codeclimate.com/repos/5cac8b574719e676d50060ee/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4181ffca902206ff7648/test_coverage)](https://codeclimate.com/repos/5cac8b574719e676d50060ee/test_coverage)
