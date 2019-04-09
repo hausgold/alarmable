@@ -2,7 +2,7 @@ sudo: false
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=0c1ca3b503e2700926f502d25c7df227cab8884f31cb59ac806daa6e43d1451e
+    - CC_TEST_REPORTER_ID=31e005b4d2d190f26dcb055d5ac3a9ccfd492da2c335e5abfafbd438488f8b08
 
 addons:
   postgresql: "9.6"
