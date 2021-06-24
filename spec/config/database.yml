@@ -1,4 +1,4 @@
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   pool: 1
@@ -7,8 +7,6 @@ test:
   username: postgres
   password: postgres
 
-travis:
-  adapter: postgresql
-  encoding: unicode
-  pool: 1
-  database: alarmable
+github_actions:
+  <<: *test
+  host: db.alarmable.local

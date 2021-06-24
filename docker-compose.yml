@@ -1,7 +1,7 @@
 version: "3"
 services:
   db:
-    image: postgres:9.6
+    image: hausgold/postgres:9.6
     network_mode: bridge
     ports: ["5432"]
     volumes:
@@ -10,6 +10,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: alarmable
+      MDNS_HOSTNAME: db.alarmable.local
 
   test:
     image: ruby:2.3

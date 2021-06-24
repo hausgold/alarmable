@@ -4,7 +4,7 @@ require 'simplecov'
 SimpleCov.command_name 'specs'
 
 # Test Env
-env = ENV['TRAVIS'].nil? ? :test : :travis
+env = ENV['GITHUB_ACTIONS'].nil? ? :test : :github_actions
 
 require 'bundler/setup'
 require 'alarmable'
