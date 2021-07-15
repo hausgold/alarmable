@@ -167,7 +167,6 @@ module Alarmable
     # Initiate a reschedule for each alarm in the alarm settings and
     # cancel all left-overs.
     #
-    # rubocop:disable Rails/SkipsModelValidations because we need to skip them
     # :reek:TooManyStatements because its already broken down
     def reschedule_alarm_jobs
       # Perform the reschedule of all the current alarms.
@@ -189,7 +188,6 @@ module Alarmable
       # endless create-update loops.
       update_columns(alarm_jobs: new_alarm_jobs)
     end
-    # rubocop:enable Rails/SkipsModelValidations
 
     # Reschedule only on updates when the alarm settings are changed.
     def alarms_update_callback

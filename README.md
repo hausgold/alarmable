@@ -2,9 +2,9 @@
 
 [![Continuous Integration](https://github.com/hausgold/alarmable/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/hausgold/alarmable/actions/workflows/test.yml)
 [![Gem Version](https://badge.fury.io/rb/alarmable.svg)](https://badge.fury.io/rb/alarmable)
-[![Maintainability](https://api.codeclimate.com/v1/badges/4181ffca902206ff7648/maintainability)](https://codeclimate.com/repos/5cac8b574719e676d50060ee/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4181ffca902206ff7648/test_coverage)](https://codeclimate.com/repos/5cac8b574719e676d50060ee/test_coverage)
-[![API docs](https://img.shields.io/badge/docs-API-blue.svg)](https://www.rubydoc.info/gems/alarmable)
+[![Test Coverage](https://automate-api.hausgold.de/v1/coverage_reports/alarmable/coverage.svg)](https://knowledge.hausgold.de/coverage)
+[![Test Ratio](https://automate-api.hausgold.de/v1/coverage_reports/alarmable/ratio.svg)](https://knowledge.hausgold.de/coverage)
+[![API docs](https://automate-api.hausgold.de/v1/coverage_reports/alarmable/documentation.svg)](https://www.rubydoc.info/gems/alarmable)
 
 This is a reusable alarm concern for Active Record models. It adds support for
 the automatic maintenance of Active Job's which are scheduled for the given

@@ -23,13 +23,13 @@ end
 
 # Print some information
 puts
-puts <<EOD
+puts <<DESC
   -------------- Versions --------------
       Active Job: #{ActiveJob.version}
    Active Record: #{ActiveRecord.version}
   Active Support: #{ActiveSupport.version}
   --------------------------------------
-EOD
+DESC
 puts
 
 # Configure Active Record

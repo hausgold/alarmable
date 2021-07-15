@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable RSpec/NestedGroups because we nest a lot here
-
 require 'spec_helper'
 
 class TestAlarmJob < ActiveJob::Base; end
@@ -60,7 +58,9 @@ RSpec.describe Alarmable do
 
   # rubocop:disable RSpec/BeforeAfterAll because we are aware
   before(:all) { create_tables(*tables) }
+
   before { enqueued_jobs.clear }
+
   after(:all) { drop_tables(*tables) }
 
   let(:alarmable) { TestAlarmable.new(start_at: 1.day.from_now) }
@@ -100,7 +100,7 @@ RSpec.describe Alarmable do
     context 'without notification base date' do
       before do
         alarmable.save
-        alarmable.update_attributes(start_at: nil)
+        alarmable.update(start_at: nil)
       end
 
       it 'schedules no new job' do
@@ -109,7 +109,7 @@ RSpec.describe Alarmable do
       end
 
       it 'cancels a older matching job' do
-        alarmable.update_attributes(alarm_jobs_attributes)
+        alarmable.update(alarm_jobs_attributes)
         expect { alarmable.reschedule_alarm_job(email_alarm) }.to \
           (change { enqueued_jobs.count }).from(1).to(0)
       end
@@ -140,24 +140,19 @@ RSpec.describe Alarmable do
         expect(TestAlarmJob).not_to receive(:cancel)
         alarmable.reschedule_alarm_job(email_alarm)
       end
-
-      # rubocop:disable Rails/SkipsModelValidations because we need to skip them
       it 'cancels not non-matching jobs' do
         job_id = test_job.job_id
         alarmable.update_columns(alarm_jobs: Hash['404', job_id])
         expect { alarmable.reschedule_alarm_job(email_alarm) }.to \
           change { enqueued_jobs.count }.from(1).to(2)
       end
-      # rubocop:enable Rails/SkipsModelValidations
 
-      # rubocop:disable Rails/SkipsModelValidations because we need to skip them
       it 'cancels matching jobs' do
         job_id = test_job.job_id
         alarmable.update_columns(alarm_jobs: Hash[alarm_id, job_id])
         expect { alarmable.reschedule_alarm_job(email_alarm) }.to \
           (change { enqueued_jobs })
       end
-      # rubocop:enable Rails/SkipsModelValidations
 
       it 'passes back the partial alarm_job hash' do
         result = alarmable.reschedule_alarm_job(email_alarm)
@@ -365,13 +360,13 @@ RSpec.describe Alarmable do
       before { alarmable.save }
 
       it 'schedules a new job with the correct id' do
-        alarmable.update_attributes(alarms_attributes)
+        alarmable.update(alarms_attributes)
         expect(enqueued_jobs.last[:args].first).to be >= 1
       end
 
       it 'schedules no job when base date is nil' do
         opts = alarms_attributes.merge(start_at: nil)
-        expect { alarmable.update_attributes(opts) }.not_to \
+        expect { alarmable.update(opts) }.not_to \
           (change { enqueued_jobs.count }).from(0)
       end
     end
@@ -380,7 +375,7 @@ RSpec.describe Alarmable do
       before { alarmable.save }
 
       it 'cancels all notification jobs on destroy' do
-        alarmable.update_attributes(alarms_attributes)
+        alarmable.update(alarms_attributes)
         expect { alarmable.destroy }.to \
           change { enqueued_jobs.count }.from(1).to(0)
       end
@@ -388,5 +383,3 @@ RSpec.describe Alarmable do
   end
   # rubocop:enable RSpec/BeforeAfterAll
 end
-
-# rubocop:enable RSpec/NestedGroups
