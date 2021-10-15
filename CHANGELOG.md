@@ -1,3 +1,8 @@
+### 0.1.2
+
+* Migrated to Github Actions
+* Migrated to our own coverage reporting
+
 ### 0.1.1
 
 * Added test coverage reports
