@@ -1,3 +1,10 @@
+### next
+
+* Added support for Ruby 2.7, 3.0, 3.1
+* Added support for Rails 6.0, 6.1, 7.0
+* Dropped support for Ruby 2.3, 2.4, 2.5, 2.6
+* Dropped support for Rails 4, 5.0, 5.1
+
 ### 0.1.2
 
 * Migrated to Github Actions

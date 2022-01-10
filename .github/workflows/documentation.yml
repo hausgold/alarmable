@@ -17,7 +17,7 @@ jobs:
       - name: Install the correct Ruby version
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.5
+          ruby-version: 2.7
           bundler-cache: true
 
       - name: Prepare the virtual environment

@@ -26,20 +26,23 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activejob', '>=3', '<6'
+  spec.required_ruby_version = '>= 2.7'
+
+  spec.add_dependency 'activejob', '>= 5.2.0'
   spec.add_dependency 'activejob-cancel', '~> 0.3'
-  spec.add_dependency 'activerecord', '>=3', '<6'
-  spec.add_dependency 'activesupport', '>=3', '<6'
+  spec.add_dependency 'activerecord', '>= 5.2.0'
+  spec.add_dependency 'activesupport', '>= 5.2.0'
   spec.add_dependency 'hashdiff', '~> 0.3.7'
 
   spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'bundler', '>= 1.16', '< 3'
-  spec.add_development_dependency 'pg', '~> 0.18'
-  spec.add_development_dependency 'railties', '>= 4.2.0', '< 6.1'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'pg', '~> 1.2'
+  spec.add_development_dependency 'railties', '>= 5.2.0'
+  spec.add_development_dependency 'rake', '>= 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop', '~> 0.63.1'
-  spec.add_development_dependency 'rubocop-rspec', '~> 1.31'
+  spec.add_development_dependency 'rubocop', '~> 1.24'
+  spec.add_development_dependency 'rubocop-rails', '~> 2.13'
+  spec.add_development_dependency 'rubocop-rspec', '~> 2.7'
   spec.add_development_dependency 'simplecov', '< 0.18'
   spec.add_development_dependency 'yard', '~> 0.9.18'
   spec.add_development_dependency 'yard-activesupport-concern', '~> 0.0.1'

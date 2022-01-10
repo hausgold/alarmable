@@ -92,21 +92,16 @@ module Alarmable
     # of the specified class. Also validate the +alarm_base_date_property+
     # setting.
     #
-    # rubocop:disable Style/GuardClause because its fine like this
     # :reek:NilCheck because we validate concern usage
     def validate_alarm_settings
       raise 'Alarmable +alarm_job+ is not configured' if alarm_job.nil?
-      unless alarm_job.is_a? Class
-        raise 'Alarmable +alarm_job+ is not instantiable'
-      end
-      if alarm_base_date_property.nil?
-        raise 'Alarmable +alarm_base_date_property+ is not configured'
-      end
-      unless has_attribute? alarm_base_date_property
-        raise 'Alarmable +alarm_base_date_property+ is not usable'
-      end
+      raise 'Alarmable +alarm_job+ is not instantiable' \
+        unless alarm_job.is_a? Class
+      raise 'Alarmable +alarm_base_date_property+ is not configured' \
+        if alarm_base_date_property.nil?
+      raise 'Alarmable +alarm_base_date_property+ is not usable' \
+        unless has_attribute? alarm_base_date_property
     end
-    # rubocop:enable Style/GuardClause
 
     # Generate a unique and recalculatable identifier for a given alarm object.
     # We build a hash of the primary keys (before_minutes and channel) to

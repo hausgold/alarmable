@@ -1,7 +1,7 @@
 version: "3"
 services:
   db:
-    image: hausgold/postgres:9.6
+    image: hausgold/postgres:11.8
     network_mode: bridge
     ports: ["5432"]
     volumes:
@@ -13,7 +13,7 @@ services:
       MDNS_HOSTNAME: db.alarmable.local
 
   test:
-    image: ruby:2.3
+    image: ruby:2.7
     network_mode: bridge
     working_dir: /app
     volumes:

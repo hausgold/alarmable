@@ -2,8 +2,8 @@
 
 source "https://rubygems.org"
 
-gem "activejob", "4.2.10"
-gem "activerecord", "4.2.10"
-gem "activesupport", "4.2.10"
+gem "activejob", "7.0.0"
+gem "activerecord", "7.0.0"
+gem "activesupport", "7.0.0"
 
 gemspec path: "../"

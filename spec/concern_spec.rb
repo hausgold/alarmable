@@ -37,6 +37,8 @@ tables = %i[test_alarmables
             test_alarmable_base_date_missings
             test_alarmable_base_date_invalids]
 
+# rubocop:disable RSpec/MultipleMemoizedHelpers because we have to setup
+#   a lot of things here
 RSpec.describe Alarmable do
   include ActiveJob::TestHelper
 
@@ -140,6 +142,7 @@ RSpec.describe Alarmable do
         expect(TestAlarmJob).not_to receive(:cancel)
         alarmable.reschedule_alarm_job(email_alarm)
       end
+
       it 'cancels not non-matching jobs' do
         job_id = test_job.job_id
         alarmable.update_columns(alarm_jobs: Hash['404', job_id])
@@ -197,7 +200,8 @@ RSpec.describe Alarmable do
     before { alarmable.save }
 
     it 'reschedules every alarm' do
-      expect(alarmable).to receive(:reschedule_alarm_job).and_return({})
+      allow(alarmable).to receive(:reschedule_alarm_job).and_return({})
+      expect(alarmable).to receive(:reschedule_alarm_job)
       alarmable.alarms = [email_alarm]
       alarmable.reschedule_alarm_jobs
     end
@@ -383,3 +387,4 @@ RSpec.describe Alarmable do
   end
   # rubocop:enable RSpec/BeforeAfterAll
 end
+# rubocop:enable RSpec/MultipleMemoizedHelpers

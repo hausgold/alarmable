@@ -29,7 +29,7 @@ class CodeStatistics
   # +calculate_directory_statistics+ method call.
   def calculate_statistics
     Hash[@pairs.map do |pair|
-      [pair.first, calculate_directory_statistics(*pair[1..-1])]
+      [pair.first, calculate_directory_statistics(*pair[1..])]
     end]
   end
 
@@ -67,6 +67,6 @@ end
 ENV['SOURCE_ANNOTATION_DIRECTORIES'] = 'spec,doc'
 
 desc 'Enumerate all annotations'
-task :notes do
+task notes: :environment do
   SourceAnnotationExtractor.enumerate '@?OPTIMIZE|@?FIXME|@?TODO', tag: true
 end
