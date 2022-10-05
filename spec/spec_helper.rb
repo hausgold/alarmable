@@ -8,6 +8,7 @@ env = ENV['GITHUB_ACTIONS'].nil? ? :test : :github_actions
 
 require 'bundler/setup'
 require 'alarmable'
+require 'pg'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
