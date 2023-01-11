@@ -69,7 +69,7 @@ RSpec.describe Alarmable do
   let(:alarm_id) { '858dc938829b7a40b31e228f9e7a914d' }
   let(:alarms_attributes) { { alarms: [email_alarm] } }
   let(:alarm_jobs_attributes) do
-    { alarm_jobs: Hash[alarm_id, test_job.job_id] }
+    { alarm_jobs: { alarm_id => test_job.job_id } }
   end
 
   let(:uuid_regex) do
@@ -140,16 +140,17 @@ RSpec.describe Alarmable do
         expect(TestAlarmJob).not_to receive(:cancel)
         alarmable.reschedule_alarm_job(email_alarm)
       end
+
       it 'cancels not non-matching jobs' do
         job_id = test_job.job_id
-        alarmable.update_columns(alarm_jobs: Hash['404', job_id])
+        alarmable.update_columns(alarm_jobs: { '404' => job_id })
         expect { alarmable.reschedule_alarm_job(email_alarm) }.to \
           change { enqueued_jobs.count }.from(1).to(2)
       end
 
       it 'cancels matching jobs' do
         job_id = test_job.job_id
-        alarmable.update_columns(alarm_jobs: Hash[alarm_id, job_id])
+        alarmable.update_columns(alarm_jobs: { alarm_id => job_id })
         expect { alarmable.reschedule_alarm_job(email_alarm) }.to \
           (change { enqueued_jobs })
       end
@@ -197,7 +198,8 @@ RSpec.describe Alarmable do
     before { alarmable.save }
 
     it 'reschedules every alarm' do
-      expect(alarmable).to receive(:reschedule_alarm_job).and_return({})
+      allow(alarmable).to receive(:reschedule_alarm_job).and_return({})
+      expect(alarmable).to receive(:reschedule_alarm_job)
       alarmable.alarms = [email_alarm]
       alarmable.reschedule_alarm_jobs
     end
@@ -218,11 +220,11 @@ RSpec.describe Alarmable do
 
     # rubocop:disable RSpec/ExampleLength because we need 6 lines here :(
     it 'cancels none updated jobs' do
-      allow(alarmable).to receive(:reschedule_alarm_job)\
-        .and_return(Hash[alarm_id, 'something-new'])
+      allow(alarmable).to receive(:reschedule_alarm_job) \
+        .and_return({ alarm_id => 'something-new' })
       expect(TestAlarmJob).not_to receive(:cancel).with('404-job-id')
       alarmable.alarms = [email_alarm]
-      alarmable.alarm_jobs = Hash[alarm_id, '404-job-id']
+      alarmable.alarm_jobs = { alarm_id => '404-job-id' }
       alarmable.reschedule_alarm_jobs
     end
     # rubocop:enable RSpec/ExampleLength
@@ -253,7 +255,7 @@ RSpec.describe Alarmable do
   describe '#alarms_destroy_callback' do
     it 'cancels all notification jobs from the reference pool' do
       expect(TestAlarmJob).to receive(:cancel).with('cancel-now')
-      alarmable.alarm_jobs = Hash[alarm_id, 'cancel-now']
+      alarmable.alarm_jobs = { alarm_id => 'cancel-now' }
       alarmable.alarms_destroy_callback
     end
   end
