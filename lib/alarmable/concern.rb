@@ -160,7 +160,7 @@ module Alarmable
       job = alarm_job.set(wait_until: notify_at).perform_later(self.id, alarm)
 
       # Construct a new alarm_jobs partial instance for this job
-      Hash[id, job.job_id]
+      { id => job.job_id }
     end
     # rubocop:enable Metrics/AbcSize
 
@@ -177,7 +177,7 @@ module Alarmable
       # Detect the differences from the original alarm_jobs hash to the new
       # built (by partials) alarm_jobs hash. The jobs from negative differences
       # must be canceled.
-      diff = HashDiff.diff(alarm_jobs, new_alarm_jobs)
+      diff = Hashdiff.diff(alarm_jobs, new_alarm_jobs)
 
       diff.select { |prop| prop.first == '-' }.each do |prop|
         alarm_job.cancel(prop.last)

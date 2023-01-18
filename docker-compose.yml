@@ -13,7 +13,8 @@ services:
       MDNS_HOSTNAME: db.alarmable.local
 
   test:
-    image: ruby:2.3
+    build: .
+    env_file: Envfile
     network_mode: bridge
     working_dir: /app
     volumes:
