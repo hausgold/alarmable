@@ -36,6 +36,7 @@ jobs:
         uses: hausgold/actions/ci@master
         with:
           clone_token: '${{ secrets.CLONE_TOKEN }}'
+          settings_secret_key: '${{ secrets.SETTINGS_SECRET_KEY }}'
           settings: '${{ github.repository }}'
           target: ci/gem-test
 
@@ -65,6 +66,7 @@ jobs:
         uses: hausgold/actions/ci@master
         with:
           clone_token: '${{ secrets.CLONE_TOKEN }}'
+          settings_secret_key: '${{ secrets.SETTINGS_SECRET_KEY }}'
           settings: '${{ github.repository }}'
           target: ci/noop
 
