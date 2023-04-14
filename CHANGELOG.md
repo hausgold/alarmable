@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Upgraded to PostgreSQL 15.2 and Redis 7.0 (#5)
 
 ### 1.1.0
 
