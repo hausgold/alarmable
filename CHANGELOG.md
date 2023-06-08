@@ -1,5 +1,6 @@
 ### next
 
+* Moved the development dependencies from the gemspec to the Gemfile (#6)
 * Upgraded to PostgreSQL 15.2 and Redis 7.0 (#5)
 
 ### 1.1.0
