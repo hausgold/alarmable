@@ -32,7 +32,8 @@ end
 
 # Configure Active Record
 db_config = Pathname.new(__dir__).join('config', 'database.yml')
-ActiveRecord::Base.configurations = YAML.load_file(db_config)
+load_method = YAML.respond_to?(:unsafe_load) ? :unsafe_load : :load
+ActiveRecord::Base.configurations = YAML.send(load_method, db_config.read)
 ActiveRecord::Base.establish_connection(env)
 
 # Configure Active Job
