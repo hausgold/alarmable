@@ -1,5 +1,9 @@
 ### next
 
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 1.2.0
+
 * Upgraded to PostgreSQL 15.2 and Redis 7.0 (#5)
 * Moved the development dependencies from the gemspec to the Gemfile (#6)
 * Dropped support for Ruby <2.7 (#8)
