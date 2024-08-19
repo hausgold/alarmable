@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Upgraded PostgreSQL to 16.4 (#10)
 
 ### 1.2.4
 
