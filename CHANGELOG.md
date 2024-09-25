@@ -2,33 +2,33 @@
 
 * Upgraded PostgreSQL to 16.4 (#10)
 
-### 1.2.4
+### 1.2.4 (15 August 2024)
 
 * Just a retag of 1.2.1
 
-### 1.2.3
+### 1.2.3 (15 August 2024)
 
 * Just a retag of 1.2.1
 
-### 1.2.2
+### 1.2.2 (9 August 2024)
 
 * Just a retag of 1.2.1
 
-### 1.2.1
+### 1.2.1 (9 August 2024)
 
 * Added API docs building to continuous integration (#9)
 
-### 1.2.0
+### 1.2.0 (8 July 2024)
 
 * Upgraded to PostgreSQL 15.2 and Redis 7.0 (#5)
 * Moved the development dependencies from the gemspec to the Gemfile (#6)
 * Dropped support for Ruby <2.7 (#8)
 
-### 1.1.0
+### 1.1.0 (24 February 2023)
 
 * Added support for Gem release automation
 
-### 1.0.0
+### 1.0.0 (18 January 2023)
 
 * Bundler >= 2.3 is from now on required as minimal version (#4)
 * Dropped support for Ruby < 2.5 (#4)
@@ -36,12 +36,12 @@
 * Updated all development/runtime gems to their latest
   Ruby 2.5 compatible version (#4)
 
-### 0.1.2
+### 0.1.2 (15 October 2021)
 
 * Migrated to Github Actions
 * Migrated to our own coverage reporting
 
-### 0.1.1
+### 0.1.1 (12 May 2021)
 
 * Added test coverage reports
 * Corrected test coverage reports
@@ -53,7 +53,7 @@
 * Changed travis-ci.org to travis-ci.com links
 * Corrected the GNU Make release target
 
-### 0.1.0
+### 0.1.0 (22 December 2017)
 
 * Corrected a broken example on the readme
 * Added initial readme file
