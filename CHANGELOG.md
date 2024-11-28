@@ -1,7 +1,8 @@
 ### next
 
-* Upgraded PostgreSQL to 16.6 (#11)
 * Upgraded PostgreSQL to 16.4 (#10)
+* Upgraded PostgreSQL to 16.6 (#11)
+* Upgraded PostgreSQL to 17.2 (#12)
 
 ### 1.2.4 (15 August 2024)
 
