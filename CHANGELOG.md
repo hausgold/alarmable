@@ -1,5 +1,9 @@
 ### next
 
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 1.3.0 (3 January 2025)
+
 * Upgraded PostgreSQL to 16.4 (#10)
 * Upgraded PostgreSQL to 16.6 (#11)
 * Upgraded PostgreSQL to 17.2 (#12)
