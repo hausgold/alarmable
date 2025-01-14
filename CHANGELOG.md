@@ -4,7 +4,7 @@
 
 ### 1.4.0 (12 January 2025)
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Just a retag of 1.3.0
 
 ### 1.3.0 (3 January 2025)
 
