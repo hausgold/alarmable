@@ -41,4 +41,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'activerecord', '>= 6.1'
   spec.add_dependency 'activesupport', '>= 6.1'
   spec.add_dependency 'hashdiff', '~> 1.0'
+  spec.add_dependency 'zeitwerk', '~> 2.6'
 end
