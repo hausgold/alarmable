@@ -224,7 +224,7 @@ RSpec.describe Alarmable do
 
     # rubocop:disable RSpec/ExampleLength because we need 6 lines here :(
     it 'cancels none updated jobs' do
-      allow(alarmable).to receive(:reschedule_alarm_job) \
+      allow(alarmable).to receive(:reschedule_alarm_job)
         .and_return({ alarm_id => 'something-new' })
       expect(TestAlarmJob).not_to receive(:cancel).with('404-job-id')
       alarmable.alarms = [email_alarm]
