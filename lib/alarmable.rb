@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'zeitwerk'
+require 'logger'
 require 'active_support'
 require 'active_record'
 require 'active_job'
