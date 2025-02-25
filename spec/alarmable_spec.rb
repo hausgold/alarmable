@@ -56,7 +56,7 @@ RSpec.describe Alarmable do
     end
   end
 
-  # rubocop:disable RSpec/BeforeAfterAll because we are aware
+  # rubocop:disable RSpec/BeforeAfterAll -- because we are aware
   before(:all) { create_tables(*tables) }
 
   before { enqueued_jobs.clear }
@@ -222,7 +222,7 @@ RSpec.describe Alarmable do
       alarmable.reschedule_alarm_jobs
     end
 
-    # rubocop:disable RSpec/ExampleLength because we need 6 lines here :(
+    # rubocop:disable RSpec/ExampleLength -- because we need 6 lines here :(
     it 'cancels none updated jobs' do
       allow(alarmable).to receive(:reschedule_alarm_job)
         .and_return({ alarm_id => 'something-new' })
@@ -282,8 +282,8 @@ RSpec.describe Alarmable do
             raise_error(RuntimeError, /alarm_job/)
         end
 
-        # rubocop:disable RSpec/RepeatedExample because it looks like the same
-        #   but the background is different
+        # rubocop:disable RSpec/RepeatedExample -- because it looks like the
+        #   same but the background is different
         it 'raise not when set' do
           expect { TestAlarmable.new }.not_to raise_error
         end
@@ -294,8 +294,8 @@ RSpec.describe Alarmable do
             raise_error(RuntimeError, /alarm_job/)
         end
 
-        # rubocop:disable RSpec/RepeatedExample because it looks like the same
-        #   but the background is different
+        # rubocop:disable RSpec/RepeatedExample -- because it looks like the
+        #   same but the background is different
         it 'raise not when a class' do
           expect { TestAlarmable.new }.not_to raise_error
         end
@@ -308,8 +308,8 @@ RSpec.describe Alarmable do
             raise_error(RuntimeError, /alarm_base_date_property/)
         end
 
-        # rubocop:disable RSpec/RepeatedExample because it looks like the same
-        #   but the background is different
+        # rubocop:disable RSpec/RepeatedExample -- because it looks like the
+        #   same but the background is different
         it 'raise not when set' do
           expect { TestAlarmable.new }.not_to raise_error
         end
@@ -320,8 +320,8 @@ RSpec.describe Alarmable do
             raise_error(RuntimeError, /alarm_base_date_property/)
         end
 
-        # rubocop:disable RSpec/RepeatedExample because it looks like the same
-        #   but the background is different
+        # rubocop:disable RSpec/RepeatedExample -- because it looks like the
+        #   same but the background is different
         it 'raise not when an useable property' do
           expect { TestAlarmable.new }.not_to raise_error
         end
