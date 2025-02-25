@@ -71,7 +71,7 @@ module Alarmable
     attr_accessor :alarm_job, :alarm_base_date_property
   end
 
-  # rubocop:disable Metrics/BlockLength because Active Support like it
+  # rubocop:disable Metrics/BlockLength -- because Active Support like it
   included do
     # Hooks
     after_initialize :validate_alarm_settings, :alarm_defaults
@@ -89,16 +89,12 @@ module Alarmable
     # Getter for the alarm job class.
     #
     # @return [Class] The alarm job class
-    def alarm_job
-      self.class.alarm_job
-    end
+    delegate :alarm_job, to: :class
 
     # Getter for the alarm base date property.
     #
     # @return [Symbol] The user defined base date property
-    def alarm_base_date_property
-      self.class.alarm_base_date_property
-    end
+    delegate :alarm_base_date_property, to: :class
 
     # Set some defaults on the relevant alarm properties.
     def alarm_defaults
@@ -110,7 +106,7 @@ module Alarmable
     # of the specified class. Also validate the +alarm_base_date_property+
     # setting.
     #
-    # rubocop:disable Style/GuardClause because its fine like this
+    # rubocop:disable Style/GuardClause -- because its fine like this
     # :reek:NilCheck because we validate concern usage
     def validate_alarm_settings
       raise 'Alarmable +alarm_job+ is not configured' if alarm_job.nil?
@@ -151,7 +147,7 @@ module Alarmable
     # @return [Object] The new alarm_jobs instance (partial)
     #   Example: { "alarm id": "job id" }
     #
-    # rubocop:disable Metrics/AbcSize because its already broken down
+    # rubocop:disable Metrics/AbcSize -- because its already broken down
     # :reek:TooManyStatements because see above
     # :reek:NilCheck because we dont want to cancel 'nil' job id
     # :reek:DuplicateMethodCall because hash access is fast
