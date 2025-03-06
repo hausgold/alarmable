@@ -2,6 +2,7 @@
 
 * Corrected some RuboCop glitches (#17)
 * Upgraded PostgreSQL to 17.4. (#18)
+* Upgraded the rubocop dependencies (#19)
 
 ### 1.6.0 (30 January 2025)
 
