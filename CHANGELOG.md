@@ -1,8 +1,12 @@
 ### next
 
-* Corrected some RuboCop glitches (#17)
-* Upgraded PostgreSQL to 17.4. (#18)
-* Upgraded the rubocop dependencies (#19)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 1.6.1 (21 May 2025)
+
+* Corrected some RuboCop glitches ([#17](https://github.com/hausgold/alarmable/pull/17))
+* Upgraded PostgreSQL to 17.4. ([#18](https://github.com/hausgold/alarmable/pull/18))
+* Upgraded the rubocop dependencies ([#19](https://github.com/hausgold/alarmable/pull/19))
 
 ### 1.6.0 (30 January 2025)
 
