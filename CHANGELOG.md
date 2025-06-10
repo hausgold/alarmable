@@ -1,6 +1,7 @@
 ### next
 
 * Upgraded PostgreSQL to 17.5. (#20)
+* Corrected some RuboCop glitches (#21)
 
 ### 1.6.1 (21 May 2025)
 
