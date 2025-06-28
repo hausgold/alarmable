@@ -2,6 +2,7 @@
 
 * Upgraded PostgreSQL to 17.5. (#20)
 * Corrected some RuboCop glitches (#21)
+* Drop Ruby 2 and end of life Rails (<7.1) (#22)
 
 ### 1.6.1 (21 May 2025)
 
