@@ -1,8 +1,12 @@
 ### next
 
-* Upgraded PostgreSQL to 17.5. (#20)
-* Corrected some RuboCop glitches (#21)
-* Drop Ruby 2 and end of life Rails (<7.1) (#22)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.0.0 (28 June 2025)
+
+* Upgraded PostgreSQL to 17.5. ([#20](https://github.com/hausgold/alarmable/pull/20))
+* Corrected some RuboCop glitches ([#21](https://github.com/hausgold/alarmable/pull/21))
+* Drop Ruby 2 and end of life Rails (<7.1) ([#22](https://github.com/hausgold/alarmable/pull/22))
 
 ### 1.6.1 (21 May 2025)
 
