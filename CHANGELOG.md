@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Upgraded PostgreSQL to 17.6. (#23)
 
 ### 2.0.0 (28 June 2025)
 
