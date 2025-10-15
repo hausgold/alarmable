@@ -66,8 +66,6 @@ module Alarmable
 
   class_methods do
     # Getter/Setter
-    #
-    # :reek:Attribute because thats what this thing is about
     attr_accessor :alarm_job, :alarm_base_date_property
   end
 
@@ -107,7 +105,6 @@ module Alarmable
     # setting.
     #
     # rubocop:disable Style/GuardClause -- because its fine like this
-    # :reek:NilCheck because we validate concern usage
     def validate_alarm_settings
       raise 'Alarmable +alarm_job+ is not configured' if alarm_job.nil?
       unless alarm_job.is_a? Class
@@ -131,8 +128,6 @@ module Alarmable
     # @param channel [String] The alarm channel
     # @param before_minutes [Integer] The minutes before the alarm starts
     # @return [String] The unique alarm id
-    #
-    # :reek:UtilityFunction because its a utility, for sure
     def alarm_id(channel, before_minutes)
       (Digest::MD5.new << "#{channel}#{before_minutes}").to_s
     end
@@ -148,9 +143,6 @@ module Alarmable
     #   Example: { "alarm id": "job id" }
     #
     # rubocop:disable Metrics/AbcSize -- because its already broken down
-    # :reek:TooManyStatements because see above
-    # :reek:NilCheck because we dont want to cancel 'nil' job id
-    # :reek:DuplicateMethodCall because hash access is fast
     def reschedule_alarm_job(alarm)
       # Symbolize the hash keys (just to be sure).
       alarm = alarm.symbolize_keys
@@ -181,8 +173,6 @@ module Alarmable
 
     # Initiate a reschedule for each alarm in the alarm settings and
     # cancel all left-overs.
-    #
-    # :reek:TooManyStatements because its already broken down
     def reschedule_alarm_jobs
       # Perform the reschedule of all the current alarms.
       new_alarm_jobs = alarms.each_with_object({}) do |alarm, memo|
