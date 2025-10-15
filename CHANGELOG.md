@@ -1,6 +1,7 @@
 ### next
 
 * Upgraded PostgreSQL to 17.6. (#23)
+* Dropped Reek. (#24)
 
 ### 2.0.0 (28 June 2025)
 
