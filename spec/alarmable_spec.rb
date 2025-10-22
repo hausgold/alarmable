@@ -6,27 +6,32 @@ class TestAlarmJob < ActiveJob::Base; end
 
 class TestAlarmable < ActiveRecord::Base
   include Alarmable
+
   self.alarm_job = TestAlarmJob
   self.alarm_base_date_property = :start_at
 end
 
 class TestAlarmableJobMissing < ActiveRecord::Base
   include Alarmable
+
   self.alarm_base_date_property = :start_at
 end
 
 class TestAlarmableJobInvalid < ActiveRecord::Base
   include Alarmable
+
   self.alarm_job = :unknown
 end
 
 class TestAlarmableBaseDateMissing < ActiveRecord::Base
   include Alarmable
+
   self.alarm_job = TestAlarmJob
 end
 
 class TestAlarmableBaseDateInvalid < ActiveRecord::Base
   include Alarmable
+
   self.alarm_job = TestAlarmJob
   self.alarm_base_date_property = false
 end
@@ -109,13 +114,13 @@ RSpec.describe Alarmable do
 
       it 'schedules no new job' do
         expect { alarmable.reschedule_alarm_job(email_alarm) }.not_to \
-          (change { enqueued_jobs.count }).from(0)
+          change { enqueued_jobs.count }.from(0)
       end
 
       it 'cancels a older matching job' do
         alarmable.update(alarm_jobs_attributes)
         expect { alarmable.reschedule_alarm_job(email_alarm) }.to \
-          (change { enqueued_jobs.count }).from(1).to(0)
+          change { enqueued_jobs.count }.from(1).to(0)
       end
     end
 
@@ -358,7 +363,7 @@ RSpec.describe Alarmable do
         alarmable.alarms = [email_alarm]
         alarmable.start_at = nil
         expect { alarmable.save }.not_to \
-          (change { enqueued_jobs.count }).from(0)
+          change { enqueued_jobs.count }.from(0)
       end
     end
 
@@ -373,7 +378,7 @@ RSpec.describe Alarmable do
       it 'schedules no job when base date is nil' do
         opts = alarms_attributes.merge(start_at: nil)
         expect { alarmable.update(opts) }.not_to \
-          (change { enqueued_jobs.count }).from(0)
+          change { enqueued_jobs.count }.from(0)
       end
     end
 
