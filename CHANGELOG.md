@@ -1,8 +1,12 @@
 ### next
 
-* Upgraded PostgreSQL to 17.6. (#23)
-* Dropped Reek. (#24)
-* Added support for Rails 8.1 (#25)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.1.0 (24 October 2025)
+
+* Upgraded PostgreSQL to 17.6. ([#23](https://github.com/hausgold/alarmable/pull/23))
+* Dropped Reek. ([#24](https://github.com/hausgold/alarmable/pull/24))
+* Added support for Rails 8.1 ([#25](https://github.com/hausgold/alarmable/pull/25))
 
 ### 2.0.0 (28 June 2025)
 
