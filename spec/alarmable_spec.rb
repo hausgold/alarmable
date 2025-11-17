@@ -36,11 +36,13 @@ class TestAlarmableBaseDateInvalid < ActiveRecord::Base
   self.alarm_base_date_property = false
 end
 
-tables = %i[test_alarmables
-            test_alarmable_job_missings
-            test_alarmable_job_invalids
-            test_alarmable_base_date_missings
-            test_alarmable_base_date_invalids]
+TABLES = %i[
+  test_alarmables
+  test_alarmable_job_missings
+  test_alarmable_job_invalids
+  test_alarmable_base_date_missings
+  test_alarmable_base_date_invalids
+].freeze
 
 RSpec.describe Alarmable do
   include ActiveJob::TestHelper
@@ -62,11 +64,11 @@ RSpec.describe Alarmable do
   end
 
   # rubocop:disable RSpec/BeforeAfterAll -- because we are aware
-  before(:all) { create_tables(*tables) }
+  before(:all) { create_tables(*TABLES) }
 
   before { enqueued_jobs.clear }
 
-  after(:all) { drop_tables(*tables) }
+  after(:all) { drop_tables(*TABLES) }
 
   let(:alarmable) { TestAlarmable.new(start_at: 1.day.from_now) }
   let(:test_job) { TestAlarmJob.perform_later }
