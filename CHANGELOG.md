@@ -1,6 +1,7 @@
 ### next
 
 * Upgraded PostgreSQL to 18.1. (#26)
+* Migrated to a shared Rubocop configuration for HAUSGOLD gems (#27)
 
 ### 2.1.0 (24 October 2025)
 
