@@ -1,7 +1,11 @@
 ### next
 
-* Upgraded PostgreSQL to 18.1. (#26)
-* Migrated to a shared Rubocop configuration for HAUSGOLD gems (#27)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.2.0 (19 December 2025)
+
+* Upgraded PostgreSQL to 18.1. ([#26](https://github.com/hausgold/alarmable/pull/26))
+* Migrated to a shared Rubocop configuration for HAUSGOLD gems ([#27](https://github.com/hausgold/alarmable/pull/27))
 
 ### 2.1.0 (24 October 2025)
 
