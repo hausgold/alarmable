@@ -322,14 +322,14 @@ RSpec.describe Alarmable do
         end
         # rubocop:enable RSpec/RepeatedExample
 
-        it 'raise when not an useable property' do
+        it 'raise when not an usable property' do
           expect { TestAlarmableBaseDateInvalid.new }.to \
             raise_error(RuntimeError, /alarm_base_date_property/)
         end
 
         # rubocop:disable RSpec/RepeatedExample -- because it looks like the
         #   same but the background is different
-        it 'raise not when an useable property' do
+        it 'raise not when an usable property' do
           expect { TestAlarmable.new }.not_to raise_error
         end
         # rubocop:enable RSpec/RepeatedExample

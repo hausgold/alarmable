@@ -120,7 +120,7 @@ module Alarmable
 
     # Generate a unique and recalculatable identifier for a given alarm
     # object.  We build a hash of the primary keys (before_minutes and
-    # channel) to achive this.  Afterwards, this alarm id is used to
+    # channel) to achieve this.  Afterwards, this alarm id is used to
     # reference dedicated scheduled jobs and track their updates. (Or cancel
     # them accordingly)
     #
