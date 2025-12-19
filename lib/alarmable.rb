@@ -69,7 +69,6 @@ module Alarmable
     attr_accessor :alarm_job, :alarm_base_date_property
   end
 
-  # rubocop:disable Metrics/BlockLength -- because Active Support like it
   included do
     # Hooks
     after_initialize :validate_alarm_settings, :alarm_defaults
@@ -141,8 +140,6 @@ module Alarmable
     # @param alarm [Hash] The alarm object
     # @return [Object] The new alarm_jobs instance (partial)
     #   Example: { "alarm id": "job id" }
-    #
-    # rubocop:disable Metrics/AbcSize -- because its already broken down
     def reschedule_alarm_job(alarm)
       # Symbolize the hash keys (just to be sure).
       alarm = alarm.symbolize_keys
@@ -169,7 +166,6 @@ module Alarmable
       # Construct a new alarm_jobs partial instance for this job
       { id => job.job_id }
     end
-    # rubocop:enable Metrics/AbcSize
 
     # Initiate a reschedule for each alarm in the alarm settings and
     # cancel all left-overs.
@@ -204,5 +200,4 @@ module Alarmable
       alarm_jobs.each_value { |job_id| alarm_job.cancel(job_id) }
     end
   end
-  # rubocop:enable Metrics/BlockLength
 end
