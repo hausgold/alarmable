@@ -1,5 +1,6 @@
 ### next
 
+* Upgraded to Ubuntu 24.04 on Github Actions (#31)
 * Migrated to hausgold/actions@v2 (#30)
 
 ### 2.3.0 (26 December 2025)
