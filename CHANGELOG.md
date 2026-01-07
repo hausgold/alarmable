@@ -1,7 +1,11 @@
 ### next
 
-* Upgraded to Ubuntu 24.04 on Github Actions (#31)
-* Migrated to hausgold/actions@v2 (#30)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.4.0 (7 January 2026)
+
+* Upgraded to Ubuntu 24.04 on Github Actions ([#31](https://github.com/hausgold/alarmable/pull/31))
+* Migrated to hausgold/actions@v2 ([#30](https://github.com/hausgold/alarmable/pull/30))
 
 ### 2.3.0 (26 December 2025)
 
