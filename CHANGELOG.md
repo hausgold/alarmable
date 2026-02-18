@@ -1,8 +1,12 @@
 ### next
 
-* Upgraded PostgreSQL to 18.2 (#33)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.7.0 (18 February 2026)
+
+* Upgraded PostgreSQL to 18.2 ([#33](https://github.com/hausgold/alarmable/pull/33))
 * Dropped 3rd-level gem dependencies which are not directly used
-  by this gem (#34)
+  by this gem ([#34](https://github.com/hausgold/alarmable/pull/34))
 
 ### 2.6.0 (28 January 2026)
 
