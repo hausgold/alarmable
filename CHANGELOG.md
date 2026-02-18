@@ -1,6 +1,10 @@
 ### next
 
-* Added gemspec dependencies for all loaded gems (#35)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.8.0 (18 February 2026)
+
+* Added gemspec dependencies for all loaded gems ([#35](https://github.com/hausgold/alarmable/pull/35))
 
 ### 2.7.0 (18 February 2026)
 

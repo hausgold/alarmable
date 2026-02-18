@@ -3,7 +3,7 @@
 # The gem version details.
 module Alarmable
   # The version of the +alarmable+ gem
-  VERSION = '2.7.0'
+  VERSION = '2.8.0'
 
   class << self
     # Returns the version of gem as a string.
