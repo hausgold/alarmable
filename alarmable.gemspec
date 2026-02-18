@@ -40,9 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'activejob-cancel', '~> 0.3'
   spec.add_dependency 'activerecord', '>= 8.0'
   spec.add_dependency 'activesupport', '>= 8.0'
-  spec.add_dependency 'base64', '>= 0.3'
-  spec.add_dependency 'bigdecimal', '~> 3.1'
   spec.add_dependency 'hashdiff', '~> 1.0'
-  spec.add_dependency 'mutex_m', '>= 0.3'
   spec.add_dependency 'zeitwerk', '~> 2.6'
 end

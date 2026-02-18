@@ -1,6 +1,8 @@
 ### next
 
 * Upgraded PostgreSQL to 18.2 (#33)
+* Dropped 3rd-level gem dependencies which are not directly used
+  by this gem (#34)
 
 ### 2.6.0 (28 January 2026)
 
