@@ -1,6 +1,6 @@
 services:
   db:
-    image: hausgold/postgres:18.2
+    image: hausgold/postgres:18.3
     network_mode: bridge
     ports: ["5432"]
     volumes:
