@@ -1,5 +1,6 @@
 ### next
 
+* Upgraded PostgreSQL to 18.3 (#37)
 * Corrected some RuboCop issues (#36)
 
 ### 2.8.0 (18 February 2026)
