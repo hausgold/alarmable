@@ -2,6 +2,7 @@
 
 require 'spec_helper'
 
+# rubocop:disable Style/OneClassPerFile -- because of the various specs
 class TestAlarmJob < ActiveJob::Base; end
 
 class TestAlarmable < ActiveRecord::Base
@@ -35,6 +36,7 @@ class TestAlarmableBaseDateInvalid < ActiveRecord::Base
   self.alarm_job = TestAlarmJob
   self.alarm_base_date_property = false
 end
+# rubocop:enable Style/OneClassPerFile
 
 TABLES = %i[
   test_alarmables
