@@ -1,7 +1,11 @@
 ### next
 
-* Upgraded PostgreSQL to 18.3 (#37)
-* Corrected some RuboCop issues (#36)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.9.0 (16 March 2026)
+
+* Upgraded PostgreSQL to 18.3 ([#37](https://github.com/hausgold/alarmable/pull/37))
+* Corrected some RuboCop issues ([#36](https://github.com/hausgold/alarmable/pull/36))
 
 ### 2.8.0 (18 February 2026)
 
