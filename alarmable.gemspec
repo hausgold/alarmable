@@ -34,12 +34,12 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 3.3'
+  spec.required_ruby_version = '>= 4.0'
 
-  spec.add_dependency 'activejob', '>= 8.0'
+  spec.add_dependency 'activejob', '>= 8.1'
   spec.add_dependency 'activejob-cancel', '~> 0.3'
-  spec.add_dependency 'activerecord', '>= 8.0'
-  spec.add_dependency 'activesupport', '>= 8.0'
+  spec.add_dependency 'activerecord', '>= 8.1'
+  spec.add_dependency 'activesupport', '>= 8.1'
   spec.add_dependency 'hashdiff', '~> 1.0'
   spec.add_dependency 'logger', '~> 1.7'
   spec.add_dependency 'zeitwerk', '~> 2.6'
