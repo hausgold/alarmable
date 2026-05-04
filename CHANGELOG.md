@@ -1,6 +1,10 @@
 ### next
 
-* Dropped Ruby 3.x and Rails <8.1 support (#39)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.11.0 (4 May 2026)
+
+* Dropped Ruby 3.x and Rails <8.1 support ([#39](https://github.com/hausgold/alarmable/pull/39))
 
 ### 2.10.0 (26 March 2026)
 
