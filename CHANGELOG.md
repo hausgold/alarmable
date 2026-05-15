@@ -1,6 +1,10 @@
 ### next
 
-* Upgraded PostgreSQL to 18.4 (#40)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.12.0 (15 May 2026)
+
+* Upgraded PostgreSQL to 18.4 ([#40](https://github.com/hausgold/alarmable/pull/40))
 
 ### 2.11.0 (4 May 2026)
 
