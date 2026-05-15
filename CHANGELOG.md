@@ -1,6 +1,6 @@
 ### next
 
-* TODO: Replace this bullet point with an actual description of a change.
+* Upgraded PostgreSQL to 18.4 (#40)
 
 ### 2.11.0 (4 May 2026)
 
