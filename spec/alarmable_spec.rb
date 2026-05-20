@@ -134,8 +134,9 @@ RSpec.describe Alarmable do
 
       it 'cancels nothing' do
         test_job
-        expect { alarmable.reschedule_alarm_job(email_alarm) }.not_to \
-          (change { enqueued_jobs })
+        expect { alarmable.reschedule_alarm_job(email_alarm) }.not_to(change do
+          enqueued_jobs
+        end)
       end
 
       it 'schedules no new jobs' do
@@ -162,8 +163,9 @@ RSpec.describe Alarmable do
       it 'cancels matching jobs' do
         job_id = test_job.job_id
         alarmable.update_columns(alarm_jobs: { alarm_id => job_id })
-        expect { alarmable.reschedule_alarm_job(email_alarm) }.to \
-          (change { enqueued_jobs })
+        expect { alarmable.reschedule_alarm_job(email_alarm) }.to(change do
+          enqueued_jobs
+        end)
       end
 
       it 'passes back the partial alarm_job hash' do
@@ -243,8 +245,9 @@ RSpec.describe Alarmable do
     it 'updates the alarm_jobs property (persistence)' do
       alarmable.alarms = [email_alarm]
       alarmable.save
-      expect { alarmable.reschedule_alarm_jobs }.to \
-        (change { alarmable.reload.alarm_jobs })
+      expect { alarmable.reschedule_alarm_jobs }.to(change do
+        alarmable.reload.alarm_jobs
+      end)
     end
   end
 
@@ -339,8 +342,7 @@ RSpec.describe Alarmable do
     describe '#reschedule_alarm_jobs (after_create)' do
       describe 'no alarms change' do
         it 'change not the alarm_jobs' do
-          expect { alarmable.save }.not_to \
-            (change { alarmable.alarm_jobs })
+          expect { alarmable.save }.not_to(change { alarmable.alarm_jobs })
         end
 
         it 'creates no new jobs' do
@@ -357,8 +359,7 @@ RSpec.describe Alarmable do
 
       it 'changes the alarm_jobs property' do
         alarmable.alarms = [email_alarm]
-        expect { alarmable.save }.to \
-          (change { alarmable.alarm_jobs })
+        expect { alarmable.save }.to(change { alarmable.alarm_jobs })
       end
 
       it 'schedules no job when base date is nil' do
