@@ -231,7 +231,8 @@ RSpec.describe Alarmable do
       alarmable.reschedule_alarm_jobs
     end
 
-    # rubocop:disable RSpec/ExampleLength -- because we need 6 lines here :(
+    # rubocop:disable-next RSpec/ExampleLength -- because we need 6 lines here
+    #   :(
     it 'cancels none updated jobs' do
       allow(alarmable).to receive(:reschedule_alarm_job)
         .and_return({ alarm_id => 'something-new' })
@@ -240,7 +241,6 @@ RSpec.describe Alarmable do
       alarmable.alarm_jobs = { alarm_id => '404-job-id' }
       alarmable.reschedule_alarm_jobs
     end
-    # rubocop:enable RSpec/ExampleLength
 
     it 'updates the alarm_jobs property (persistence)' do
       alarmable.alarms = [email_alarm]
