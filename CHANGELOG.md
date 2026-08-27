@@ -1,6 +1,10 @@
 ### next
 
-* Corrected some RuboCop glitches (#42)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.14.0 (27 August 2026)
+
+* Corrected some RuboCop glitches ([#42](https://github.com/hausgold/alarmable/pull/42))
 
 ### 2.13.0 (20 May 2026)
 
