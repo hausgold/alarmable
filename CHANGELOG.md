@@ -1,5 +1,6 @@
 ### next
 
+* Upgraded PostgreSQL to 18.6 (#44)
 * Pinned json gem to <3.0 (#43)
 
 ### 2.14.0 (27 August 2026)
