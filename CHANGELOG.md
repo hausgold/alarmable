@@ -1,7 +1,11 @@
 ### next
 
-* Upgraded PostgreSQL to 18.6 (#44)
-* Pinned json gem to <3.0 (#43)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.15.0 (14 September 2026)
+
+* Upgraded PostgreSQL to 18.6 ([#44](https://github.com/hausgold/alarmable/pull/44))
+* Pinned json gem to <3.0 ([#43](https://github.com/hausgold/alarmable/pull/43))
 
 ### 2.14.0 (27 August 2026)
 
