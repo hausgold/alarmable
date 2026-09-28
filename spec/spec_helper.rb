@@ -2,6 +2,7 @@
 
 require 'simplecov'
 SimpleCov.command_name 'specs'
+SimpleCov.start
 
 # Test Env
 env = ENV['GITHUB_ACTIONS'].nil? ? :test : :github_actions
