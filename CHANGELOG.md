@@ -1,6 +1,10 @@
 ### next
 
-* Dropped the json gem <3.0 pin (#46)
+* TODO: Replace this bullet point with an actual description of a change.
+
+### 2.17.0 (28 September 2026)
+
+* Dropped the json gem <3.0 pin ([#46](https://github.com/hausgold/alarmable/pull/46))
 
 ### 2.16.0 (28 September 2026)
 
